@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{/layout/layout :: dynamic(~{ :: body})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+</head>
+
+<body>
+	
+    <form class="w-50 m-auto mt-4" action="/student/save" method="post" th:object="${sv}">
+        <h1 class="text-center">Data Binding</h1>
+        <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input th:field="*{email}" type="email" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fullname</label>
+            <input th:field="*{fullname}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Avegege Marks</label>
+            <input th:field="*{marks}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label ">Gender</label> 
+            <div class=" form-check form-check-inline">
+                <input th:field="*{gender}" th:value="true"  class="form-check-input " type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                    value="option1">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input th:field="*{gender}" th:value="false"  class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                    value="option2">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label ">Nationality</label> 
+            <select th:field="*{country}" class="form-select" aria-label="Default select example">
+                <option value="VN">Việt Nam</option>
+                <option value="US">United States</option>
+              </select>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
