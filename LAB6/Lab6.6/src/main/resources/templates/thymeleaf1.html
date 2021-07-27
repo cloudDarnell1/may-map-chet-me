@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <nav th:replace="~{/_menu.html :: div}"></nav>
+  <hr>
+  <h2 th:text="${message}"></h2>
+  <hr>
+  <h3 th:unless="${#request.remoteUser}">
+    Chưa đăng nhập
+  </h3>
+  <ul th:if="${#request.remoteUser}">
+    <li th:if="${#request.isUserInRole('ADMIN')}">ADMIN</li>
+    <li th:if="${#request.isUserInRole('USER')}">USER</li>
+  </ul>
+</body>
+</html>
