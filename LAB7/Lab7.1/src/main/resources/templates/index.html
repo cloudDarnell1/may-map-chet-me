@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="Lab7Controller as vm">
+        <table>
+            <thead>
+                <th></th>
+                <th ng-repeat="role in vm.roles">
+                    {{role.name}}
+                </th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="account in vm.accounts">
+                    <td>{{account.fullname}}</td>
+                    <td ng-repeat="role in vm.roles">
+                        <input type="checkbox"
+                                ng-checked="vm.exist(account,role)"
+                                ng-click="vm.delete($event)"
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script th:src="@{/js/lab7.constant.js}"></script>
+<script th:src="@{/js/authorities.service.js}"></script>
+<script th:src="@{/js/account.service.js}"></script>
+<script th:src="@{/js/role.service.js}"></script>
+<script th:src="@{/js/lab7.component.js}"></script>
+</html>
