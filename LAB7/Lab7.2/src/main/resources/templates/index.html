@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <nav th:replace="~{/_menu.html :: div}"></nav>
+  <hr>
+  <h2 th:text="${message}"></h2>
+  <hr>
+  <div th:replace="~{info.html :: .main}"></div>
+</body>
+</html>

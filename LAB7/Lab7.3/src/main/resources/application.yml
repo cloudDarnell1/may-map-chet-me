@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: NguyenVanSuong@123
+    url: jdbc:sqlserver://localhost;database=J6Store
+
+  security:
+    oauth2:
+      client:
+        registration:
+# Google
+          google:
+            client-id: 551950771230-09bdcubv2apj6pphfmpttujgoeedf75g.apps.googleusercontent.com
+            client-secret: _JyaIFx0UkO5toItuQmCZDN1

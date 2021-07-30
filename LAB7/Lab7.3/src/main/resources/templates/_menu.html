@@ -1,0 +1,10 @@
+<div>
+    <a th:href="@{/home/index}">Home</a> ::
+    <a th:href="@{/home/about}">About US</a> |||
+    <a th:href="@{/admin}">Admins</a> ::
+    <a th:href="@{/user}">Users</a> ::
+    <a th:href="@{/authenticated}">Authenticated</a> |||
+    <a th:href="@{/authorities}">Authorities</a>
+    <a th:if="${#request.userPrincipal eq null}" th:href="@{/auth/login}">Login</a>
+    <a th:if="${#request.userPrincipal ne null}" th:href="@{/logout}">Logout</a>
+</div>

@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <body>
+    <div th:replace="~{/_menu :: div}"></div>
     <div ng-app="myApp" ng-controller="Lab7Controller as vm">
         <table border="1" style="width: 50%; margin: auto; text-align: center">
             <thead>
@@ -15,7 +16,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="account in vm.accounts">
-                    <td>{{account.fullname}}</td>
+                    <td>{{account.fullname}}-username={{account.username}}</td>
                     <td ng-repeat="role in vm.roles">
                         <input type="checkbox"
                                 ng-checked="vm.exist(account,role)"
