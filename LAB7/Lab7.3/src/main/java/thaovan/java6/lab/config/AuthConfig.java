@@ -47,7 +47,7 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth/login**","/home/**", "/js/**","/css/**", "/api/**").permitAll()
 
                 .antMatchers("/admin**", "/authorities").hasRole("ADMIN")
-                .antMatchers("/authenticated**", "/user**").hasAnyRole("USER", "GUEST")
+                .antMatchers("/authenticated**", "/user**").hasAnyRole("USER", "GUEST", "ADMIN")
 
                 // rest of path, login before
                 .anyRequest().authenticated();
