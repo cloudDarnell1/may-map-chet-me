@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/assets/css/shopping-cart.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/cart.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="container" ng-app="myApp" ng-controller="myController">
+    <header class="row">
+        <h1 class="alert alert-success">FPY Polytechnic</h1>
+    </header>
+    <nav class="row">
+        <div th:replace="/layout/_menu.html"></div>
+    </nav>
+
+    <div class="row">
+        <article class="col-sm-9">
+            <div th:replace="${main}"></div>
+        </article>
+        <aside class="col-sm-3">
+            <div th:replace="/layout/_cart-info"></div>
+            <div th:replace="/layout/_category"></div>
+
+        </aside>
+    </div>
+
+    <footer class="row">
+        Bui-Thao-Van
+    </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script th:src="@{/assets/js/cart.service.js}"></script>
+<script th:src="@{/assets/js/lab.controller.js}"></script>
+</html>

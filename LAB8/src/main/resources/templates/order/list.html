@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="/layout/index :: dynamic(~{::main})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                YOUR ORDERS PURCHASED
+            </div>
+            <table>
+                <thead>
+                    <th>No.</th>
+                    <th>Order No.</th>
+                    <th>Order Date</th>
+                    <th>Shipping Address</th>
+                    <th>No.</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr th:each="order,state : ${orders}" th:object="${order}">
+                        <td th:text="${state.index}"></td>
+                        <td th:text="*{id}"></td>
+                        <td th:text="*{createDate}"></td>
+                        <td th:text="*{address}"></td>
+                        <td>
+                            <a th:href="@{|/order/detail/*{id}|}" class="btn btn-defail">
+                                <b class="glyphicon glyphicon-search"></b>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+}
+
+tr {
+    line-height: 30px;
+}
+
+td, th {
+    border: 1px solid #00000030;
+    padding: 10px
+}

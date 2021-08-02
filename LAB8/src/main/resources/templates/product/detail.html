@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{/layout/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main class="poly-item-detail" th:object="${product}">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-body text-center">
+                    <img th:src="@{/assets/images/rolex.jpeg}">
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <ui>
+                        <li th:text="*{name}"></li>
+                        <li th:text="*{price}"></li>
+                        <li th:text="*{createDate}"></li>
+                        <li th:text="*{categoriesEntity.name}"></li>
+                    </ui>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Hàng cùng loại
+                </div>
+                <div class="panel-body">
+                    <ui>
+                        <li th:each="product : *{categoriesEntity.productsEntities}">
+                            <a th:href="@{|/product/detail/${product.id}|}" th:text="${product.name}"></a>
+                        </li>
+                    </ui>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

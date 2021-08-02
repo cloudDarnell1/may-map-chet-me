@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="/layout/index :: dynamic(~{::main})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                ORDER INFORMATION
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <div>Order Number</div>
+                        <div class="form-control">
+                            [[${order.id}]]
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <div>Purchaser</div>
+                        <div class="form-control">
+                            [[${order.customer}]]
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <div>Purchase Date</div>
+                        <div class="form-control">
+                            [[${order.createDate}]]
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <div>Shipping Date</div>
+                        <div class="form-control">
+                            [[${order.address}]]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                ORDER LINES
+            </div>
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </thead>
+                <tbody>
+                    <tr th:each="detail : ${order.getOrderDetailsEntities()}">
+                        <td>[[${detail.id}]]</td>
+                        <td>[[${detail.productsEntity.name}]]</td>
+                        <td>[[${detail.price}]]</td>
+                        <td>[[${detail.quantity}]]</td>
+                        <td>[[${detail.quantity}]]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

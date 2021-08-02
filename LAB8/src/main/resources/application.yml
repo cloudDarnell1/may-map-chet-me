@@ -1,0 +1,13 @@
+## Server Configuration
+server:
+  servlet:
+    context-path: /thao-van
+  port: 8888
+
+## Datasource Configuration
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: NguyenVanSuong@123
+    url: jdbc:sqlserver://localhost;database=J6Store
